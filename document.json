@@ -1,0 +1,44 @@
+{
+  "Components":[
+    {
+      "name":"AlertDialog",
+      "props":[
+        {"name":"title", "type":"string","description":"Dialog's heading"},
+        {"name":"cancelable", "type":"bool","description":"Shows cancel button"},
+        {"name":"ignoreWarning", "type":"bool","description":"Ignores warning by window"},
+        {"name":"form", "type":"string","description":"Selects form of child element"},
+        {"name":"primaryButtonText", "type":"string","description":"Text of primary button"},
+        {"name":"secondaryButtonText", "type":"string","description":"Text of secondary button"},
+        {"name":"cancelButtonText", "type":"string","description":"Text of cancel button"}
+      ],
+      "events":[
+        {"name":"onApplyDialog", "description":"Sets event of primary button", "response":[{"type":"json","reason":"It shows result of form. If form is not valid it returns value of false"}], "result":[{"type":"bool", "reason":"If result is true, dialog is closes but if is false dialog not closes"}]},
+        {"name":"onSecondaryApplyDialog", "description":"Sets event of secondary button", "response":[{"type":"json","reason":"It shows result of form. If form is not valid it returns value of false"}], "result":[{"type":"bool", "reason":"If result is true, dialog is closes but if is false dialog not closes"}]},
+        {"name":"onCloseDialog", "description":"Sets event of when closed alert dialog", "required":true}
+      ]
+    },
+    {
+      "name":"Input",
+      "props":[
+        {"name":"label", "type":"string","description":"Creates new label tag and defines inner text of label tag"},
+        {"name":"customDescription", "type":"string","description":"Defines description bottom on input."},
+        {"name":"options", "type":"json", "value":{"value":"option tag value attribute", "text":"option tag inner text"}, "description":"If input type is select, creates option tag inside select tag"}
+      ]
+    },
+    {
+      "name":"Fragment",
+      "props":[
+        {"name":"ignoreWarning", "type":"bool","description":"Ignores warning by window"}
+      ],
+      "components":[
+        {
+          "name":"View",
+          "props":[
+            {"name":"title", "type":"string","description":"Title of Tab"}
+          ]
+        }
+      ],
+      "warning":["Inside of Fragment should have only component of Fragment.View"]
+    }
+  ]
+}

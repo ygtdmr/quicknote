@@ -1,0 +1,122 @@
+nav
+  min-width: 256px
+  min-height: 100%
+  max-height: 100%
+  float: left
+  background-color: var(--color-3)
+  .empty-message
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 80%
+    transform: translate(-50%, -50%)
+    text-align: center
+  .move-mode
+    & > span
+      border-bottom: 1px solid var(--color-5)
+      height: calc(2.5rem + 1px)
+      justify-content: space-between
+      align-items: center
+      & > :first-of-type
+        margin-left: 18px
+      & > :last-of-type
+        margin-right: 18px
+  .leave
+    position: absolute
+    background-color: var(--color-3) !important
+    z-index: 1
+    width: 100%
+    padding: 8px !important
+    opacity: 0
+    pointer-events: none
+    &:focus
+      opacity: 1
+      outline-offset: -1px
+  & > .leave + button
+    padding-top: 0.25rem
+  button:not(.move-mode button, .leave)
+    display: block
+    text-align: left
+    width: 100%
+    padding-right: 8px !important
+    line-height: calc(1.5rem + 2px)
+    svg
+      vertical-align: inherit
+      transition: transform 0.25s
+    & + div
+      display: none
+    &[disabled]
+      opacity: 1
+    &[data-more]
+      & + div
+        display: block
+        animation-name: fadeIn
+        animation-duration: 0.25s
+      svg
+        transform: rotate(90deg)
+    &:focus
+      outline-offset: -1px
+    &[data-selected]
+      background-color: var(--color-5)
+      &:hover
+        opacity: inherit
+
+main, header, header+.move-mode
+  overflow: hidden
+
+main > .move-mode
+  border-top: 1px solid var(--color-5)
+  height: calc(2.5rem + 2px)
+  justify-content: space-between
+  align-items: center
+  padding-right: 1rem
+  padding-left: 1rem
+
+header
+  min-height: 3.5rem
+  max-height: 3.5rem
+  padding: 1rem
+  justify-content: space-between
+  align-items: center
+  & > h1
+    float: left
+    font-size: 1.5rem
+    white-space: nowrap
+  & > .buttons
+    float: right
+    button
+      &:not(:last-child)
+        margin-right: 12px
+
+
+.table-content
+  max-height: calc(100vh - 3.5rem)
+  overflow-y: auto
+  .page-control
+    height: calc(1.5rem + 2px)
+    display: flex
+    align-items: center
+    position: fixed
+    right: calc(1rem - 4px)
+    padding: 0
+    z-index: 3
+
+  tr:focus, tbody > tr[data-selected]
+    outline-offset: -1px
+    z-index: 1
+  & > table > thead
+    position: sticky
+    top: 0
+    z-index: 2
+    & > tr
+      opacity: 0.75
+      line-height: 1rem
+  & > table > tbody > tr[data-selected]
+    outline: var(--color-2) solid 1px
+
+@media print
+  .table-content
+    overflow: hidden
+    max-height: none
+  nav, thead, header .buttons
+    display: none
