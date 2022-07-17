@@ -1,10 +1,10 @@
-const root_path = '/quicknote/';
+const root_path = '/quicknote/', js_path = '', css_path = '';
 
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(
     caches.open('v1').then(cache => {
-      return cache.addAll([root_path]);
+      return cache.addAll([root_path, js_path, css_path]);
     })
   );
 });
