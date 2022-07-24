@@ -113,11 +113,8 @@ class Navigation extends React.Component {
       {appData.isMobile && isSubjectEmpty ?
         <h4 className="empty-message">Your subjects do list here.</h4>
       :undefined}
-      {this.subjectMoveMode ?
-        <MoveMode parentComponent={this}/> :
-        !this.noteMoveMode && !isSubjectEmpty ?
-        <button className="leave" data-ignore-focus onClick={this.leaveNavigation}>Leave Navigation</button> : undefined
-      }
+      {this.subjectMoveMode ? <MoveMode parentComponent={this}/> : undefined}
+      <button className="leave" data-ignore-focus disabled={this.subjectMoveMode || this.noteMoveMode} onClick={this.leaveNavigation}>Leave Navigation</button>
       {appData.getData(this.subjectMoveMode ? 'moving_subject' : 'subject').map((e,i)=>this.getButton(e,i))}
     </nav>;
     return appData.isMobile && this.isVisibleNavigation ?
