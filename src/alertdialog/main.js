@@ -210,11 +210,11 @@ const CheckAlertDialogs = props => {
                   {value:'dark', text:'Dark'}
                 ]}/>
             </div>
-            <a className="text-center margin-bottom-8" href="https://github.com/ytdmr" target="_blank" rel="noreferrer">
+            <a className="text-center margin-bottom-8" href="https://github.com/ygtdmr" target="_blank" rel="noreferrer">
                 <label>Created By:</label>
-                Yiğit Demir
+                Yigit Demir
             </a>
-            <a className="text-center" href="https://github.com/ytdmr/quicknote" target="_blank" rel="noreferrer">
+            <a className="text-center" href="https://github.com/ygtdmr/quicknote" target="_blank" rel="noreferrer">
                   <label>Do you want help us develop this app?</label>
                   GitHub Repository
               </a>
