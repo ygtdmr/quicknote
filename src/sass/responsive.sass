@@ -1,9 +1,12 @@
 @media (min-width: 1024px)
   html, body, #root
-    font-size: 100%
+    font-size: 16px
 
   a, button, tr > td
     transition: opacity 0.25s
+
+  td
+    font-size: 0.85rem
 
   a:hover:not([disabled]), button:hover:not([disabled]), tr[role="button"]:hover:not([disabled]) > td
       opacity: 0.75
@@ -31,6 +34,9 @@
 @media (min-width:0px) and (max-width:1023px)
   html, body, #root
     font-size: 80%
+
+  td
+    font-size: 1rem
 
   a:active, button:active, tr[role="button"]:active > td
     opacity: 0.75
