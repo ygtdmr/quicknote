@@ -48,12 +48,13 @@ h6, label, th
     display: inline-block
     padding: 4px 12px 4px 12px
     border-radius: 15px
+    &:not([data-selected])
+      color: var(--color-2)
     &:focus
       z-index: 1
       outline-offset: 0
     &[data-selected]
       background-color: var(--color-3)
-      color: var(--color-2)
 
 [role="checkbox"], [role="textbox"]
   & + label
@@ -189,6 +190,8 @@ td
   animation-name: fadeIn
   animation-duration: 0.25s
   white-space: pre-wrap
+  padding-top: 4px
+  padding-bottom: 4px
 
 tr
   height: calc(1.5rem + 2px)
